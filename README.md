@@ -8,14 +8,14 @@ asdflajslj
 
 ## BRONZE,SILVER,GOLD
 
-###BRONZE
+### BRONZE
 Have at least 2 non-User models
 Have complete CRUD functionality implemented with RESTful routes. 
 
-###SILVER
+### SILVER
 Have 3 non-user models
 
-###GOLD
+### GOLD
 Have 4 non-user models
 
 ## ACKNOWLEDGMENTS
