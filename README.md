@@ -13,10 +13,10 @@ Have at least 2 non-User models
 Have complete CRUD functionality implemented with RESTful routes. 
 
 ### SILVER
-Have 3 non-user models
+have authentication 
 
 ### GOLD
-Have 4 non-user models
+Have 3 non-user models / make it look prettier
 
 ## ACKNOWLEDGMENTS
 Thanks to Annabelle for letting me stalk her readme to use as a template! 
