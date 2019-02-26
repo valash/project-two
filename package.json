@@ -1,0 +1,25 @@
+{
+  "name": "project-two",
+  "version": "1.0.0",
+  "description": "Manage is an app to help user's keep their thoughts orgnaized.",
+  "main": "app-main-index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valash/project-two.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valash/project-two/issues"
+  },
+  "homepage": "https://github.com/valash/project-two#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.0.2",
+    "mongoose": "^5.4.15"
+  }
+}
