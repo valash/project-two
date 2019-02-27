@@ -1,17 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
 const userController = require('../controllers/user');
 
-//SIGN UP STUFF
+// Sign up
 router.get('/user/signup', userController.getSignup);
 router.post('/user/signup', userController.postSignup);
 
-//logIN!!!
-router.get('/user/login', userController.getLogin);
-router.post('/user/logout', userController.postLogin);
+// Log in
+router.get('/login', userController.getLogin);
+router.post('/login', userController.postLogin);
 
-//log out!!
-router.get('/user/logout', userController.getLogout);
+// Log out
+router.get('/logout', userController.getLogout);
 
 module.exports = router;

@@ -10,32 +10,32 @@ router.get('/:id/edit', itemController.edit);
 router.put('/:id', itemController.update);
 router.delete('/:id', itemController.delete);
 
-// router.get('/', function(req, res) {
-// 	res.send('index');
-// });
+router.get('/', function(req, res) {
+	res.send('index');
+});
 
-// router.get('/new', function(req, res) {
-// 	res.send('new');
-// });
+router.get('/new', function(req, res) {
+	res.send('new');
+});
 
-// router.post('/', function(req, res) {
-// 	res.redirect('/');
-// });
+router.post('/', function(req, res) {
+	res.redirect('/');
+});
 
-// router.get('/:id', function(req, res) {
-// 	res.send(`Welcome ${req.params.id}`);
-// });
+router.get('/:id', function(req, res) {
+	res.send(`Welcome ${req.params.id}`);
+});
 
-// router.get('/:id/edit', function(req, res) {
-// 	res.send(`edit ${req.params.id}`);
-// });
+router.get('/:id/edit', function(req, res) {
+	res.send(`edit ${req.params.id}`);
+});
 
-// router.put('/:id', function(req, res) {
-// 	res.redirect('/');
-// });
+router.put('/:id', function(req, res) {
+	res.redirect('/');
+});
 
-// router.delete('/:id', function(req, res) {
-// 	res.redirect('/');
-// });
+router.delete('/:id', function(req, res) {
+	res.redirect('/');
+});
 
 module.exports = router;

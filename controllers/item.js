@@ -15,12 +15,12 @@ module.exports = {
 	},
 	show: function(req, res) {
 		Item.findById(req.params.id).then((item) => {
-			res.render('item/show', { item });
+			res.render('/item/show', { item });
 		});
 	},
 	edit: function(req, res) {
 		Item.findById(req.params.id).then((item) => {
-			res.render('item/edit', { item });
+			res.render('/item/edit', { item });
 		});
 	},
 	update: function(req, res) {

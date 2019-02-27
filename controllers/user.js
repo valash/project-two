@@ -17,7 +17,7 @@ module.exports = {
 			})
 			.catch((err) => {
 				req.flash('error', err.message);
-				res.redirect('/user/signup');
+				res.redirect('/signup');
 			});
 	},
 	getLogin: function(req, res) {
