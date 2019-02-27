@@ -51,7 +51,3 @@ module.exports = {
 		res.redirect('/');
 	}
 };
-//Once the findUser returns with our user object the only thing left is to compare the user's hashed password and the real password to see if there is a match. Always store passwords hashed and use fixed time comparison to avoid timing attacks.
-
-//If it is a match, we let the user in (by returning the user to passport - return done(null, user)), if not we return an unauthorized error (by returning nothing to passport - return done(null)).
-//https://blog.risingstack.com/node-hero-node-js-authentication-passport-js/
