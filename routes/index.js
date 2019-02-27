@@ -4,18 +4,13 @@ const { Item } = require('../models/index');
 const authenticatedUser = require('../utils/authenticatedUser');
 
 router.get('/', authenticatedUser, function(req, res) {
-	Item.find({}).sort({ name: 'asc' }).then((items) => {
-		res.render('index', { items });
+	Item.find({}).sort({ priority: 'asc' }).then((items) => {
+		res.render('index', { items, success: req.flash('success') });
 	});
 });
 
-router.use('/item', authenticatedUser, require('./item'));
-
-// adding the item router to this Master router
-router.use('/item', require('./item'));
-router.use('/user', require('./user'));
-
-router.use(require('./item'));
 router.use(require('./user'));
+
+router.use('/item', authenticatedUser, require('./item.js'));
 
 module.exports = router;

@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 
 const passport = require('passport');
 
-const LocalStrategy = require('passport-local').Strategy;
+const localStrategy = require('passport-local').Strategy;
 
 const flash = require('connect-flash');
 
@@ -31,7 +31,7 @@ app.use(
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
+passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 

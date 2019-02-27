@@ -1,9 +1,9 @@
 const passport = require('passport');
-const { User } = require('../models/user');
+const { User } = require('../models/index');
 
 module.exports = {
 	getSignup: function(req, res) {
-		res.render('/user/signup', { error: req.flash('error') });
+		res.render('user/signup', { error: req.flash('error') });
 	},
 	postSignup: function(req, res) {
 		const { username, password } = req.body;
@@ -11,13 +11,13 @@ module.exports = {
 			.then((user) => {
 				const authenticate = passport.authenticate('local');
 				authenticate(req, res, function() {
-					// req.flash('success', 'You created an account!');
+					req.flash('success', 'You created an account!');
 					res.redirect('/');
 				});
 			})
 			.catch((err) => {
 				req.flash('error', err.message);
-				res.redirect('/signup');
+				res.redirect('user/signup');
 			});
 	},
 	getLogin: function(req, res) {
@@ -30,13 +30,13 @@ module.exports = {
 		const authenticate = passport.authenticate('local', function(err, user, info) {
 			if (err || !user) {
 				req.flash('error', info.message);
-				res.redirect('/user/login');
+				res.redirect('user/login');
 			}
 
 			req.logIn(user, function(err) {
 				if (err) {
 					req.flash('error', err.message);
-					return res.redirect('/user/login');
+					return res.redirect('user/login');
 				}
 
 				req.flash('success', 'You logged in');

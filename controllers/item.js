@@ -1,4 +1,4 @@
-const { Item } = require('../models/item');
+const { Item } = require('../models/index');
 
 module.exports = {
 	new: function(req, res) {
@@ -10,17 +10,17 @@ module.exports = {
 			name,
 			description
 		}).then((item) => {
-			res.redirect(`/item/${item._id}`);
+			res.redirect(`item/${item._id}`);
 		});
 	},
 	show: function(req, res) {
 		Item.findById(req.params.id).then((item) => {
-			res.render('/item/show', { item });
+			res.render('item/show', { item });
 		});
 	},
 	edit: function(req, res) {
 		Item.findById(req.params.id).then((item) => {
-			res.render('/item/edit', { item });
+			res.render('item/edit', { item });
 		});
 	},
 	update: function(req, res) {
