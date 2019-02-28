@@ -12,7 +12,7 @@ module.exports = {
 	},
 	show: function(req, res) {
 		Item.findById(req.params.id).then((item) => {
-			res.render('item/show', { item });
+			return res.render('item/show', { item });
 		});
 	},
 	edit: function(req, res) {
