@@ -44,4 +44,10 @@ app.use(function(req, res, next) {
 app.use(require('./routes/index'));
 app.use(express.static('public'));
 
-app.listen(3005, () => console.log('LETS GO YALL'));
+// app.listen(3005, () => console.log('LETS GO YALL'));
+
+app.set('port', process.env.PORT || 3001);
+
+app.listen(app.get('port'), () => {
+	console.log(`✅ PORT: ${app.get('port')} 🌟`);
+});
