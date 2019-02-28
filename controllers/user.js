@@ -21,7 +21,7 @@ module.exports = {
 			});
 	},
 	getLogin: function(req, res) {
-		res.render('user/login', {
+		res.render('/user/login', {
 			error: req.flash('error'),
 			info: req.flash('info')
 		});
