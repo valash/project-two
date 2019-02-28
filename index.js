@@ -42,5 +42,6 @@ app.use(function(req, res, next) {
 });
 
 app.use(require('./routes/index'));
+app.use(express.static('public'));
 
 app.listen(3005, () => console.log('LETS GO YALL'));
