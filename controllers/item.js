@@ -24,7 +24,7 @@ module.exports = {
 		console.log(req.body);
 		const { name, description } = req.body;
 
-		Item.findOneAndUpdate(
+		Item.findByIdAndUpdate(
 			req.params.id,
 			{
 				name,
@@ -35,7 +35,7 @@ module.exports = {
 			}
 		)
 			.then((item) => {
-				res.redirect(`item/${item._id}`);
+				res.redirect(`/item/${item._id}`);
 			})
 			.catch((err) => {
 				console.log(err);
