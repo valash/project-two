@@ -1,5 +1,5 @@
-const passport = require('passport');
 const { User } = require('../models/index');
+const passport = require('passport');
 
 module.exports = {
 	getSignup: function(req, res) {
@@ -21,7 +21,7 @@ module.exports = {
 			});
 	},
 	getLogin: function(req, res) {
-		res.render('/user/login', {
+		res.render('user/login', {
 			error: req.flash('error'),
 			info: req.flash('info')
 		});

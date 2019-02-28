@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 
 const passport = require('passport');
 
-const localStrategy = require('passport-local').Strategy;
+const LocalStrategy = require('passport-local').Strategy;
 
 const flash = require('connect-flash');
 
@@ -22,7 +22,7 @@ app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(
 	require('express-session')({
-		secret: 'keyboard cat',
+		secret: 'WHATISHAPPENING',
 		resave: false,
 		saveUninitialized: false
 	})
@@ -31,7 +31,7 @@ app.use(
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new localStrategy(User.authenticate()));
+passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 

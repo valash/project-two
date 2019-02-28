@@ -6,10 +6,7 @@ module.exports = {
 	},
 	create: function(req, res) {
 		const { name, description } = req.body;
-		Item.create({
-			name,
-			description
-		}).then((item) => {
+		Item.create({ name, description }).then((item) => {
 			res.redirect(`item/${item._id}`);
 		});
 	},
@@ -38,7 +35,7 @@ module.exports = {
 			}
 		)
 			.then((item) => {
-				res.redirect(`/item/${item._id}`);
+				res.redirect(`item/${item._id}`);
 			})
 			.catch((err) => {
 				console.log(err);

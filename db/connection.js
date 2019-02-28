@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost/manage");
+mongoose.connect('mongodb://localhost/manage');
 
 mongoose.Promise = Promise;
 
