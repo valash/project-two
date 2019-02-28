@@ -1,4 +1,6 @@
 const Item = require('../models/index');
+const express = require('express');
+const app = express();
 
 // Always start by deleting everything
 Item.remove().then(function() {
