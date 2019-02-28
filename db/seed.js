@@ -1,9 +1,7 @@
 const Item = require('../models/index');
-const express = require('express');
-const app = express();
 
 // Always start by deleting everything
-Item.remove().then(function() {
+Item.splice({}).then(function() {
 	// Then create "seed" items
 	Item.create({
 		name: 'I had a great idea',
