@@ -4,10 +4,10 @@
     <p class="card-text">{{item.description}}</p>
   </div>
   <div class="card-footer">
-    <a href="/item/{{item.id}}/edit" class="btn btn-warning text-white">Edit</a>
+    <a href="/item/{{item.id}}/edit" class="btn btn-light text-grey">Edit</a>
 
     <form action="/item/{{item.id}}?_method=DELETE" method="post" class="d-inline">
-      <input type="submit" value="Delete" class="btn btn-danger">
+      <input type="submit" value="Delete" class="btn btn-light text-grey">
     </form>
   </div>
 </div>
