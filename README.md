@@ -6,6 +6,7 @@ Based on the Google Keep app, I want to make **Manage**, an app based on the sam
 
 
 
+
 ## BRONZE,SILVER,GOLD
 
 ### BRONZE
