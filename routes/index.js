@@ -12,5 +12,6 @@ router.get('/', authenticatedUser, function(req, res) {
 router.use(require('./user'));
 
 router.use('/item', authenticatedUser, require('./item.js'));
+// router.use('/comment', require('./comment.js'));
 
 module.exports = router;

@@ -7,6 +7,10 @@ const ItemSchema = new Schema({
 	owner: {
 		type: Schema.Types.ObjectId,
 		ref: 'User'
+	},
+	comment: {
+		type: Schema.Types.ObjectId,
+		ref: 'Comment'
 	}
 });
 

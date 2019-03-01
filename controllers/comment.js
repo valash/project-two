@@ -1,22 +1,24 @@
-const { Comment } = require('../models/index');
+// const { Comment } = require('../models/index');
+// const { Item } = require('../models/item');
 
-module.exports = {
-	new: function(req, res) {
-		res.render('item/{{item.id}}/comment/new');
-	},
-	create: function(req, res) {
-		const { comment } = req.body;
-		Comment.create({
-			comment,
-			owner: req.user._id
-		}).then((comment) => {
-			res.redirect(`comment/${item._id}`);
-		});
-	},
-	delete: function(req, res) {
-		Comment.deleteOne({ _id: req.params.id }).then((comment) => {
-			// console.log(item);
-			res.redirect('/');
-		});
-	}
-};
+// module.exports = {
+// 	new: function(req, res) {
+// 		console.log('in');
+// 		res.render(`comment/new`);
+// 	},
+// 	create: function(req, res) {
+// 		const { comment } = req.body;
+// 		Comment.create({
+// 			comment,
+// 			owner: req.user._id
+// 		}).then((comment) => {
+// 			res.redirect(`item/${item._id}/comment/new`);
+// 		});
+// 	},
+// 	delete: function(req, res) {
+// 		Comment.deleteOne({ _id: req.params.id }).then((comment) => {
+// 			// console.log(item);
+// 			res.redirect('/');
+// 		});
+// 	}
+// };
