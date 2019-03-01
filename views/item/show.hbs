@@ -12,13 +12,19 @@
     </button>
     </div>
 
-  <div class="btn-group" role="group" aria-label="Second group">
+<div class="btn-group" role="group" aria-label="Second Group">
+  <button type="button" class="btn btn-light">
+    <a href="/item/{{item.id}}/comment/new" style="color:grey;">Add Comment</a>
+    </button>
+</div>
+
+  <div class="btn-group" role="group" aria-label="Third group">
  <form action="/item/{{item.id}}?_method=DELETE" method="post" class="d-inline">
       <input type="submit" value="Delete" class="btn btn-light" style="color:grey;">
     </form>
 </div>
 
-  <div class="btn-group" role="group" aria-label="Third group">
+  <div class="btn-group" role="group" aria-label="Fourth group">
     <button type="button" class="btn btn-light"><a href="/" role="button" style="color:grey;">Home</button>
   </div>
   </div>

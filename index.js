@@ -23,14 +23,6 @@ app.use(
 	})
 );
 
-// app.use(
-// 	require('express-session')({
-// 		secret: 'okay now ladies',
-// 		resave: false,
-// 		saveUninitialized: false
-// 	})
-// );
-
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -51,5 +43,5 @@ app.use(express.static('public'));
 app.use(require('./routes/index'));
 
 app.listen(app.get('port'), () => {
-	console.log(`✅ PORT: ${app.get('port')} 🌟`);
+	console.log(`LET'S GO PORT: ${app.get('port')} YASSSSSS`);
 });

@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-center" style="font-family: 'Raleway', sans-serif; text-decoration: underline; color:#8a8a8a;">
+<h2 style="font-weight:300;font-size:x-large;">New Comment</h2>
+</div>
+
+<form action="/comment" method="post">
+  {{!-- <p class="form-group w-75 p-3 mx-auto">
+    <label for="name" style="font-family:'Raleway';color:#8a8a8a;">Title</label>
+    <input type="text" name="name" id="name" class="form-control">
+  </p> --}}
+  <p class="form-group w-75 p-3 mx-auto">
+    <label for="comment" style="font-family:'Raleway';color:#8a8a8a;">Comment:</label>
+    <textarea name="comment" id="" cols="30" rows="10" class="form-control"></textarea>
+  </p>
+  <p class="form-group w-75 p-3 mx-auto">
+    <input type="submit" value="Save" class="btn btn-light">
+  </p>
+</form>
