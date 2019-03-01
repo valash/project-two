@@ -1,4 +1,4 @@
-<h2 style="font-family:'Montserrat'; margin-top:3em;color:#696868">Sign Up</h2>
+<h2 class="mx-auto" style="font-family:'Montserrat';color:#696868; width:400px; margin-top: 4em;">Sign Up</h2>
 
 {{#if error}}
 <p class="alert alert-danger">
@@ -6,19 +6,18 @@
 </p>
 {{/if}}
 
+<div class="mx-auto" style="width:400px;margin:auto;">
 <form action="/signup" method="post" style="margin-top:2em;">
   <p class="form-group">
-    <label for="username">Username:</label>
+    <label for="username" style="font-family:'Comfortaa';text-transform:uppercase;">Username:</label>
     <input type="text" name="username" id="username" class="form-control">
   </p>
   <p class="form-group">
-    <label for="password">Password:</label>
+    <label for="password" style="font-family:'Comfortaa';text-transform:uppercase;">Password:</label>
     <input type="password" name="password" id="password" class="form-control">
   </p>
   <p class="form-group">
     <input type="submit" value="Sign Up" class="btn btn-primary">
   </p>
 </form>
-<nav class="navbar fixed-bottom navbar-light bg-dark">
-  <a class="navbar-brand" href="#">Fixed bottom</a>
-</nav>
+</div>
