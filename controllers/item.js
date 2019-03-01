@@ -6,7 +6,11 @@ module.exports = {
 	},
 	create: function(req, res) {
 		const { name, description } = req.body;
-		Item.create({ name, description }).then((item) => {
+		Item.create({
+			name,
+			description,
+			owner: req.user._id
+		}).then((item) => {
 			res.redirect(`item/${item._id}`);
 		});
 	},
@@ -21,7 +25,6 @@ module.exports = {
 		});
 	},
 	update: function(req, res) {
-		console.log(req.body);
 		const { name, description } = req.body;
 
 		Item.findByIdAndUpdate(
@@ -42,8 +45,8 @@ module.exports = {
 			});
 	},
 	delete: function(req, res) {
-		Item.remove({ _id: req.params.id }).then((item) => {
-			console.log(item);
+		Item.deleteOne({ _id: req.params.id }).then((item) => {
+			// console.log(item);
 			res.redirect('/');
 		});
 	}

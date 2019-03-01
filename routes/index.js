@@ -4,7 +4,7 @@ const { Item } = require('../models/index');
 const authenticatedUser = require('../utils/authenticatedUser');
 
 router.get('/', authenticatedUser, function(req, res) {
-	Item.find({}).sort({ priority: 'asc' }).then((items) => {
+	Item.find({ owner: req.user._id }).sort({ name: 'asc' }).then((items) => {
 		res.render('index', { items, success: req.flash('success') });
 	});
 });
