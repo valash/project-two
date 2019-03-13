@@ -12,6 +12,8 @@
     </button>
     </div>
 
+
+
 <div class="btn-group" role="group" aria-label="Second Group">
   <button type="button" class="btn btn-light">
     <a href="/item/{{item.id}}/edit" style="color:grey;">Add Comment</a>
@@ -28,3 +30,23 @@
     <button type="button" class="btn btn-light"><a href="/" role="button" style="color:grey;">Home</button>
   </div>
   </div>
+
+  <div class="d-flex justify-content-center" style="font-family: 'Raleway', sans-serif; text-decoration: underline; color:#8a8a8a;">
+<h2 style="font-weight:300;font-size:x-large;">New Comment</h2>
+</div>
+
+{{#each item.comments}}
+<div class="card">
+<p>{{body}}</p>
+</div>
+{{/each}}
+
+<form action="/comment" method="post">
+  <p class="form-group w-75 p-3 mx-auto">
+    <label for="comment" style="font-family:'Raleway';color:#8a8a8a;">Comment:</label>
+    <textarea name="comment" id="" cols="30" rows="10" class="form-control"></textarea>
+  </p>
+  <p class="form-group w-75 p-3 mx-auto">
+    <input type="submit" value="Save" class="btn btn-light">
+  </p>
+</form>

@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 // import CommentSchema
 
+const CommentSchema = new Schema({
+    comment: String
+});
+
 const ItemSchema = new Schema({
     name: String,
     description: String,
@@ -9,11 +13,7 @@ const ItemSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    comment: {
-        type: Schema.Types.ObjectId,
-        ref: 'Comment'
-    }
-    // comment: [CommentSchema]
+    comments: [CommentSchema]
 });
 
 module.exports = ItemSchema;
