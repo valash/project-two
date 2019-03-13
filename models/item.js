@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// import CommentSchema
-
-const CommentSchema = new Schema({
-    comment: String
-});
+const Comment = require('./comment');
 
 const ItemSchema = new Schema({
     name: String,
@@ -13,7 +9,7 @@ const ItemSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    comments: [CommentSchema]
+    comments: [Comment]
 });
 
 module.exports = ItemSchema;
