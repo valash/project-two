@@ -4,9 +4,11 @@ const { Item } = require('../models/index');
 const authenticatedUser = require('../utils/authenticatedUser');
 
 router.get('/', authenticatedUser, function(req, res) {
-	Item.find({ owner: req.user._id }).sort({ name: 'asc' }).then((items) => {
-		res.render('index', { items, success: req.flash('success') });
-	});
+    Item.find({ owner: req.user._id })
+        .sort({ name: 'asc' })
+        .then(items => {
+            res.render('index', { items, success: req.flash('success') });
+        });
 });
 
 router.use(require('./user'));
