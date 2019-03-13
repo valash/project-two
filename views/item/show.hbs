@@ -5,13 +5,8 @@
   </div>
 
   <div class="d-flex justify-content-center" style="font-family: 'Raleway', sans-serif; text-decoration: underline; color:#8a8a8a;">
-<h2 style="font-weight:300;font-size:x-large;">New Comment</h2>
+<h2 style="font-weight:300;font-size:large;">Add Comment</h2>
 </div>
-{{#each item.comments}}
-<div class="card">
-<p>{{body}}</p>
-</div>
-{{/each}}
 
 <form action="/item/{{item._id}}/comment?_method=PUT" method="post">
   <p class="form-group w-75 p-3 mx-auto">
@@ -22,6 +17,12 @@
     <input type="submit" value="Save" class="btn btn-light">
   </p>
 </form>
+
+{{#each item.comments}}
+<div class="card">
+<p>{{comment}}</p>
+</div>
+{{/each}}
 
 <div class="card-footer btn toolbar" role="toolbar" aria-label="Toolbar with button groups">
 

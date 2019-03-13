@@ -16,11 +16,11 @@ app.use(methodOverride('_method'));
 app.use(cookieParser());
 
 app.use(
-	session({
-		secret: 'hello world',
-		resave: false,
-		saveUninitialized: false
-	})
+    session({
+        secret: 'hello world',
+        resave: false,
+        saveUninitialized: false
+    })
 );
 
 app.use(flash());
@@ -33,15 +33,15 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use(function(req, res, next) {
-	global.user = req.user;
-	res.locals.user = req.user;
-	next();
+    global.user = req.user;
+    res.locals.user = req.user;
+    next();
 });
 
 app.use(express.static('public'));
 
 app.use(require('./routes/index'));
 
-app.listen(app.get('port'), () => {
-	console.log(`LET'S GO PORT: ${app.get('port')} YASSSSSS`);
+app.listen(3000, () => {
+    console.log(`LET'S GO PORT: ${app.get('port')} YASSSSSS`);
 });
