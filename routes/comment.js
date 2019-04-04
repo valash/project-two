@@ -1,7 +1,7 @@
 // // router:
 // const express = require('express');
 // const router = express.Router();
-// const commentController = require('../controllers/comment');
+// const commentController = require('../controllers/item');
 
 // router.get('/:id/new', commentController.new);
 // router.post('/', commentController.create);
