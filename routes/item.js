@@ -10,6 +10,7 @@ router.delete(
 	'/:id/:commentId',
 	itemController.commentDelete
 );
+router.put(`/:id/:commentId`, itemController.commentUpdate);
 router.get('/:id/edit', itemController.edit);
 router.put('/:id', itemController.update);
 router.delete('/:id', itemController.delete);

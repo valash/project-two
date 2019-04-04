@@ -77,5 +77,22 @@ module.exports = {
 		).then((item) => {
 			res.redirect(`/item/${item._id}`);
 		});
+	},
+	commentUpdate: function(req, res) {
+		const deleteComment = {
+			comment: req.body.comment
+		};
+		Item.findByIdAndUpdate(
+			{ _id: req.params.id },
+			{
+				$set: {
+					comments: {
+						comment: deleteComment.comment
+					}
+				}
+			}
+		).then((item) => {
+			res.redirect(`/item/${item._id}`);
+		});
 	}
 };

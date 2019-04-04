@@ -25,9 +25,12 @@
   <form action="/item/{{../item._id}}/{{_id}}?_method=DELETE" method="post" class="d-inline">
     <input type="submit" value="Delete" class="btn btn-light" style="color:grey;">
   </form>
-  <button type="button" class="btn btn-light">
-    <a href="/items/{{item.id}}/edit" style="color:grey;">Edit</a>
-  </button>
+  <form action="/item/{{../item._id}}/{{_id}}?_method=PUT" method="post" class="d-inline">
+    <label for="comment" style="font-family:'Raleway';color:#8a8a8a;margin:10px;">Edit Comment:</label>
+    <textarea name="comment" id="comment" class="form-control" rows="3"></textarea>
+    <input type="submit" value="Edit" class="btn btn-light" style="color:grey;">
+  </form>
+
   {{/each}}
 
   <div class="card-footer btn toolbar" role="toolbar" aria-label="Toolbar with button groups">
