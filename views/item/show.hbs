@@ -8,47 +8,47 @@
 <h2 style="font-weight:300;font-size:large;">Add Comment</h2>
 </div> --}}
 
-<form action="/item/{{item._id}}/comment?_method=PUT" method="post">
-  <p class="form-group w-75 p-3 mx-auto">
-    <label for="comment" style="font-family:'Raleway';color:#8a8a8a;margin:10px;">Comment:</label>
-    <textarea name="comment" id="comment" class="form-control" rows="3"></textarea>
-  </p>
-  <p class="form-group w-75 p-3 mx-auto">
-    <input type="submit" value="Save" class="btn btn-light">
-  </p>
-</form>
+  <form action="/item/{{item._id}}/comment?_method=PUT" method="post">
+    <p class="form-group w-75 p-3 mx-auto">
+      <label for="comment" style="font-family:'Raleway';color:#8a8a8a;margin:10px;">Comment:</label>
+      <textarea name="comment" id="comment" class="form-control" rows="3"></textarea>
+    </p>
+    <p class="form-group w-75 p-3 mx-auto">
+      <input type="submit" value="Save" class="btn btn-light" style="color:grey;">
+      <input type="submit" value="Delete" class="btn btn-light" style="color:grey;">
+      <input type="submit" value="Edit" class="btn btn-light" style="color:grey;">
+    </p>
+  </form>
 
-{{#each item.comments}}
-<div class="card bg-light mb-3 w-75 mx-auto" style="width:auto;">
-<p>{{comment}}</p>
-</div>
-{{/each}}
+  {{#each item.comments}}
+  <div class="card bg-light mb-3 w-75 mx-auto" style="width:auto;">
+    <p>{{comment}}</p>
+  </div>
+  {{/each}}
 
-<div class="card-footer btn toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="card-footer btn toolbar" role="toolbar" aria-label="Toolbar with button groups">
 
-  <div class="btn-group" role="group" aria-label="First group">
-    <button type="button" class="btn btn-light">
-      <a href="/item/{{item.id}}/edit" style="color:grey;">Edit</a>
-    </button>
+    <div class="btn-group" role="group" aria-label="First group">
+      <button type="button" class="btn btn-light">
+        <a href="/item/{{item.id}}/edit" style="color:grey;">Edit</a>
+      </button>
     </div>
 
 
 
-{{!-- <div class="btn-group" role="group" aria-label="Second Group">
+    {{!-- <div class="btn-group" role="group" aria-label="Second Group">
   <button type="button" class="btn btn-light">
     <a href="/item/{{item.id}}/edit" style="color:grey;">Add Comment</a>
     </button>
 </div> --}}
 
-  <div class="btn-group" role="group" aria-label="Third group">
- <form action="/item/{{item.id}}?_method=DELETE" method="post" class="d-inline">
-      <input type="submit" value="Delete" class="btn btn-light" style="color:grey;">
-    </form>
-</div>
+    <div class="btn-group" role="group" aria-label="Third group">
+      <form action="/item/{{item.id}}?_method=DELETE" method="post" class="d-inline">
+        <input type="submit" value="Delete" class="btn btn-light" style="color:grey;">
+      </form>
+    </div>
 
-  <div class="btn-group" role="group" aria-label="Fourth group">
-    <button type="button" class="btn btn-light"><a href="/" role="button" style="color:grey;">Home</button>
+    <div class="btn-group" role="group" aria-label="Fourth group">
+      <button type="button" class="btn btn-light"><a href="/" role="button" style="color:grey;">Home</button>
+    </div>
   </div>
-  </div>
-
-  
