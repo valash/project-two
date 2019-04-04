@@ -63,13 +63,17 @@ module.exports = {
 			res.redirect(`/item/${item._id}`);
 		});
 	},
-	comment: function(req, res) {
+	commentDelete: function(req, res) {
 		const deleteComment = {
 			comment: req.body.comment
 		};
-		Item.findByIdAndRemove(
+		Item.findByIdAndUpdate(
 			{ _id: req.params.id },
-			{ $push: { comments: deleteComment } }
+			{
+				$pull: {
+					comments: { _id: req.params.commentId }
+				}
+			}
 		).then((item) => {
 			res.redirect(`/item/${item._id}`);
 		});
