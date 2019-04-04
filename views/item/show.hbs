@@ -14,7 +14,7 @@
       <textarea name="comment" id="comment" class="form-control" rows="3"></textarea>
     </p>
     <p class="form-group w-75 p-3 mx-auto">
-      <input type="submit" value="Save" class="btn btn-light" style="color:grey;">
+      <input type="submit" value="Save" class="btn btn-light">
     </p>
   </form>
 
@@ -22,8 +22,12 @@
   <div class="card bg-light mb-3 w-75 mx-auto" style="width:auto;">
     <p>{{comment}}</p>
   </div>
-  <input type="submit" value="Delete" class="btn btn-light" style="color:grey;">
-  <input type="submit" value="Edit" class="btn btn-light" style="color:grey;">
+  <form action="/item/{{comment.id}}?_method=DELETE" method="post" class="d-inline">
+    <input type="submit" value="Delete" class="btn btn-light" style="color:grey;">
+  </form>
+  <button type="button" class="btn btn-light">
+    <a href="/items/{{item.id}}/edit" style="color:grey;">Edit</a>
+  </button>
   {{/each}}
 
   <div class="card-footer btn toolbar" role="toolbar" aria-label="Toolbar with button groups">
@@ -34,13 +38,6 @@
       </button>
     </div>
 
-
-
-    {{!-- <div class="btn-group" role="group" aria-label="Second Group">
-  <button type="button" class="btn btn-light">
-    <a href="/item/{{item.id}}/edit" style="color:grey;">Add Comment</a>
-    </button>
-</div> --}}
 
     <div class="btn-group" role="group" aria-label="Third group">
       <form action="/item/{{item.id}}?_method=DELETE" method="post" class="d-inline">
